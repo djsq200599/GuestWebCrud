@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title style="text-align: center;">Iniciar sesion</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+
+        <form [formGroup]="form" class="form-container">
+          <ion-item>
+            <ion-label position="floating">Usuario</ion-label>
+            <ion-input formControlName="user"></ion-input>
+          </ion-item>
+          <div *ngIf="form.controls['user'].invalid && (form.controls['user'].dirty || form.controls['user'].touched)">
+            <ion-label color="danger" *ngIf="form.controls['user'].errors?.['required']">Nombre es requerido.</ion-label>
+            <ion-label color="danger" *ngIf="form.controls['user'].errors?.['minlength']">Nombre debe tener al menos 4
+              caracter.</ion-label>
+            <ion-label color="danger" *ngIf="form.controls['user'].errors?.['maxlength']">Nombre no puede tener más de 20
+              caracteres.</ion-label>
+          </div>
+
+          <ion-item>
+            <ion-label position="floating">Contraseña</ion-label>
+            <ion-input formControlName="password" type="password"></ion-input>
+          </ion-item>
+          <div *ngIf="form.controls['password'].invalid && (form.controls['password'].dirty || form.controls['password'].touched)">
+            <ion-label color="danger" *ngIf="form.controls['password'].errors?.['required']">Este campo es requerido</ion-label>
+            <ion-label color="danger" *ngIf="form.controls['password'].errors?.['minlength']">Contraseña debe tener al menos 6
+              caracter.</ion-label>
+            <ion-label color="danger" *ngIf="form.controls['password'].errors?.['maxlength']">Contraseña no puede tener más de 20
+              caracteres.</ion-label>
+          </div>
+        </form>
+        <br>
+        <ion-grid style="text-align: center;">
+          <ion-row>
+            <ion-col><ion-button color="primary" (click)="login()">Ingresar</ion-button></ion-col>
+            <ion-col><ion-button color="success" [routerLink]="['/home']">Invitado</ion-button></ion-col>
+          </ion-row>
+        </ion-grid>
+
+</ion-content>
+

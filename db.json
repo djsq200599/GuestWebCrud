@@ -1,0 +1,73 @@
+{
+  "guest": [
+    {
+      "id": 1,
+      "name": "Daniel",
+      "lastname": "Suarez",
+      "date": "2023-12-19T22:29:00",
+      "phone": "+56954890716",
+      "email": "daniel@gmail.com",
+      "tower": "A",
+      "towerNumber": 69,
+      "description": "Visita donde las cariñosas "
+    },
+    {
+      "id": 2,
+      "name": "Alvaro",
+      "lastname": "Hernandez",
+      "date": "2023-12-27T23:25:00",
+      "phone": "+56123456789",
+      "email": "alvaro@gmail.com",
+      "tower": "B",
+      "towerNumber": 77,
+      "description": "Reunion cristiana evangelica"
+    },
+    {
+      "id": 3,
+      "name": "Orlando",
+      "lastname": "Tobar",
+      "date": "2023-12-25T23:26:00",
+      "phone": "+56987654321",
+      "email": "orlando@gmail.com",
+      "tower": "B",
+      "towerNumber": 22,
+      "description": "Entrega de paquete "
+    },
+    {
+      "id": 4,
+      "name": "Ezequil",
+      "lastname": "Suarez",
+      "date": "2023-12-31T23:28:00",
+      "phone": "+56654987321",
+      "email": "ezequiel@gmail.com",
+      "tower": "A",
+      "towerNumber": 66,
+      "description": "Reunion gamer de domingo"
+    },
+    {
+      "id": 5,
+      "name": "Abraham",
+      "lastname": "Pizarro",
+      "date": "2023-11-06T23:44:00",
+      "phone": "+56951753264",
+      "email": "abraham@gmail.com",
+      "tower": "B",
+      "towerNumber": 3,
+      "description": "Tramites maritales"
+    }
+  ],
+  "user": [
+    {
+      "user": "admin",
+      "password": "123456",
+      "admin": "admin",
+      "id": 1
+    },
+    {
+      "user": "user",
+      "password": "123456",
+      "admin": "normal",
+      "id": 2
+    }
+  ]
+}

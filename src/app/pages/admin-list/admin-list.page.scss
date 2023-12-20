@@ -1,0 +1,24 @@
+ion-list {
+    padding: 10px; /* Añade un poco de espacio alrededor de la lista */
+  }
+  
+  ion-item {
+    border-bottom: 1px solid #ccc; /* Agrega una línea divisoria entre elementos de la lista */
+  }
+  
+  ion-label {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  h2 {
+    font-size: 18px;
+    margin: 0;
+  }
+  
+  p {
+    margin: 0;
+    font-size: 14px;
+    color: #555;
+  }

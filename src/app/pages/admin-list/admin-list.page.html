@@ -1,0 +1,23 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title style="text-align: center; margin-right: 10%;">Lista de invitados</ion-title>
+    <ion-back-button slot="start" icon="arrow-back" defaultHref="/login"></ion-back-button>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <ion-item *ngFor="let guest of apiService.guestlist$ | async">
+      <ion-label>
+        <h2>{{guest.name}} {{guest.lastname}}</h2>
+        <p>Fecha: {{guest.date}}</p>
+        <p>Teléfono: {{guest.phone}}</p>
+        <p>Email: {{guest.email}}</p>
+        <p>Torre: {{guest.tower}}</p>
+        <p>Número de torre: {{guest.towerNumber}}</p>
+        <p>Descripción: {{guest.description}}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

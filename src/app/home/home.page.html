@@ -1,0 +1,115 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title style="text-align: center; margin-right: 10%;">Invitados</ion-title>
+    <ion-back-button slot="start" icon="arrow-back" defaultHref="/login"></ion-back-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="form" (ngSubmit)="Add()" class="form-container">
+
+    <ion-item>
+      <ion-label position="floating">Nombre</ion-label>
+      <ion-input formControlName="name"></ion-input>
+    </ion-item>
+    <div *ngIf="form.controls['name'].invalid && (form.controls['name'].dirty || form.controls['name'].touched)">
+      <ion-label color="danger" *ngIf="form.controls['name'].errors?.['required']">Nombre es requerido.</ion-label>
+      <ion-label color="danger" *ngIf="form.controls['name'].errors?.['minlength']">Nombre debe tener al menos 1
+        caracter.</ion-label>
+      <ion-label color="danger" *ngIf="form.controls['name'].errors?.['maxlength']">Nombre no puede tener más de 20
+        caracteres.</ion-label>
+    </div>
+
+    <ion-item>
+      <ion-label position="floating">Apellido</ion-label>
+      <ion-input formControlName="lastname"></ion-input>
+    </ion-item>
+    <div
+      *ngIf="form.controls['lastname'].invalid && (form.controls['lastname'].dirty || form.controls['lastname'].touched)">
+      <ion-label color="danger" *ngIf="form.controls['lastname'].errors?.['required']">Apellido es
+        requerido.</ion-label>
+      <ion-label color="danger" *ngIf="form.controls['lastname'].errors?.['minlength']">Apellido debe tener al menos 1
+        caracter.</ion-label>
+      <ion-label color="danger" *ngIf="form.controls['lastname'].errors?.['maxlength']">Apellido no puede tener más de
+        20 caracteres.</ion-label>
+    </div>
+
+    <ion-item>
+      <ion-label position="floating">Fecha</ion-label>
+      <ion-datetime formControlName="date"></ion-datetime>
+    </ion-item>
+    <div *ngIf="form.controls['date'].invalid && (form.controls['date'].dirty || form.controls['date'].touched)">
+      <ion-label color="danger" *ngIf="form.controls['date'].errors?.['required']">Fecha es requerida.</ion-label>
+    </div>
+
+    <ion-item>
+      <ion-label position="floating">Teléfono</ion-label>
+      <ion-input formControlName="phone" type="tel"></ion-input>
+    </ion-item>
+    <div *ngIf="form.controls['phone'].invalid && (form.controls['phone'].dirty || form.controls['phone'].touched)">
+      <ion-label color="danger" *ngIf="form.controls['phone'].errors?.['required']">Teléfono es requerido.</ion-label>
+      <ion-label color="danger" *ngIf="form.controls['phone'].errors?.['min']">Teléfono debe tener al menos 10
+        dígitos.</ion-label>
+      <ion-label color="danger" *ngIf="form.controls['phone'].errors?.['max']">Teléfono no puede tener más de 10
+        dígitos.</ion-label>
+    </div>
+
+    <ion-item>
+      <ion-label position="floating">Correo electrónico</ion-label>
+      <ion-input formControlName="email" type="email"></ion-input>
+    </ion-item>
+    <div *ngIf="form.controls['email'].invalid && (form.controls['email'].dirty || form.controls['email'].touched)">
+      <ion-label color="danger" *ngIf="form.controls['email'].errors?.['required']">Correo electrónico es
+        requerido.</ion-label>
+      <ion-label color="danger" *ngIf="form.controls['email'].errors?.['email']">Correo electrónico debe ser
+        válido.</ion-label>
+    </div>
+
+    <ion-item>
+      <ion-label position="floating">Torre</ion-label>
+      <ion-select formControlName="tower">
+        <ion-select-option value="A">A</ion-select-option>
+        <ion-select-option value="B">B</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <div *ngIf="form.controls['tower'].invalid && (form.controls['tower'].dirty || form.controls['tower'].touched)">
+      <ion-label color="danger" *ngIf="form.controls['tower'].errors?.['required']">Torre es requerida.</ion-label>
+    </div>
+
+    <ion-item>
+      <ion-label position="floating">Número de torre</ion-label>
+      <ion-input formControlName="towerNumber" type="number"></ion-input>
+    </ion-item>
+    <div
+      *ngIf="form.controls['towerNumber'].invalid && (form.controls['towerNumber'].dirty || form.controls['towerNumber'].touched)">
+      <ion-label color="danger" *ngIf="form.controls['towerNumber'].errors?.['required']">Número de torre es
+        requerido.</ion-label>
+      <ion-label color="danger" *ngIf="form.controls['towerNumber'].errors?.['min']">Número de torre debe ser al menos
+        1.</ion-label>
+    </div>
+
+    <ion-item>
+      <ion-label position="floating">Descripción</ion-label>
+      <ion-textarea formControlName="description"></ion-textarea>
+    </ion-item>
+    <div
+      *ngIf="form.controls['description'].invalid && (form.controls['description'].dirty || form.controls['description'].touched)">
+      <ion-label color="danger" *ngIf="form.controls['description'].errors?.['required']">Descripción es
+        requerida.</ion-label>
+      <ion-label color="danger" *ngIf="form.controls['description'].errors?.['minlength']">Descripción debe tener al
+        menos 1 caracter.</ion-label>
+      <ion-label color="danger" *ngIf="form.controls['description'].errors?.['maxlength']">Descripción no puede tener
+        más de 200 caracteres.</ion-label>
+    </div>
+
+    <div style="text-align: center;">
+      <ion-row>
+        <ion-col> <ion-button type="submit" [disabled]="form.invalid && !cargaArchivo">
+            Guardar
+          </ion-button></ion-col>
+        <ion-col> <ion-button color="danger" [routerLink]="['/iniciar-sesion']">volver</ion-button>
+        </ion-col>
+      </ion-row>
+    </div>
+  </form>
+</ion-content>
