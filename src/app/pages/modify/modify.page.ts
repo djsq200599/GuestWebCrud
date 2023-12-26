@@ -35,9 +35,9 @@ export class ModifyPage implements OnInit {
     this.form = this.fb.group({
       firstname: ['', [Validators.required, Validators.minLength(1), Validators.maxLength(20)]],
       lastname: ['', [Validators.required, Validators.minLength(1), Validators.maxLength(20)]],
-      rut: [, [Validators.required, Validators.min(10000000000), Validators.max(99999999999)]],
+      rut: ['', [Validators.required, Validators.minLength(9), Validators.maxLength(9)]],
       date: ['', [Validators.required]],
-      phone: [, [Validators.required, Validators.min(10000000000), Validators.max(99999999999)]],
+      phone: ['+56', [Validators.required, Validators.min(10000000000), Validators.max(99999999999)]],
       email: ['', [Validators.required, Validators.email]],
       tower: ['', [Validators.required]],
       towerNumber: [, [Validators.required, Validators.min(1)]],

@@ -38,19 +38,16 @@
         </ion-item>
       </ion-list>
     </ion-card-content>
+    <div  style="text-align: center;">
     <ion-grid>
-      <ion-row class="ion-justify-content-between">
-        <ion-col size="6">
-          <ion-button [routerLink]="['/listar-admin']" color="secondary" size="small">
-            <ion-icon name="arrow-back-outline"></ion-icon>
-          </ion-button>
-        </ion-col>
-        <ion-col size="6" class="ion-align-self-end" style="text-align: end;">
-          <ion-button (click)="delete()" color="danger" size="small">
+      <ion-row>
+        <ion-col>
+          <ion-button shape="round" (click)="delete()" color="danger">
             <ion-icon name="trash-outline"></ion-icon>
           </ion-button>
         </ion-col>
       </ion-row>
     </ion-grid>
+  </div>
   </ion-card>
 </ion-content>

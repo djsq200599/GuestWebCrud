@@ -36,13 +36,13 @@
 
     <ion-item>
       <ion-label position="floating">Rut</ion-label>
-      <ion-input formControlName="phone" type="tel"></ion-input>
+      <ion-input formControlName="rut" type="tel"></ion-input>
     </ion-item>
-    <div *ngIf="form.controls['phone'].invalid && (form.controls['phone'].dirty || form.controls['phone'].touched)">
-      <ion-label color="danger" *ngIf="form.controls['phone'].errors?.['required']">Rut es requerido.</ion-label>
-      <ion-label color="danger" *ngIf="form.controls['phone'].errors?.['min']">Rut debe tener al menos 9
+    <div *ngIf="form.controls['rut'].invalid && (form.controls['rut'].dirty || form.controls['rut'].touched)">
+      <ion-label color="danger" *ngIf="form.controls['rut'].errors?.['required']">Rut es requerido.</ion-label>
+      <ion-label color="danger" *ngIf="form.controls['rut'].errors?.['min']">Rut debe tener al menos 9
         dígitos.</ion-label>
-      <ion-label color="danger" *ngIf="form.controls['phone'].errors?.['max']">Rut no puede tener más de 9
+      <ion-label color="danger" *ngIf="form.controls['rut'].errors?.['max']">Rut no puede tener más de 9
         dígitos.</ion-label>
     </div>
 
