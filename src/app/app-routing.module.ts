@@ -35,6 +35,10 @@ const routes: Routes = [
     path: 'modify/:idGuest',
     loadChildren: () => import('./pages/modify/modify.module').then( m => m.ModifyPageModule)
   },
+  {
+    path: 'qr',
+    loadChildren: () => import('./pages/qr/qr.module').then( m => m.QrPageModule)
+  },
 ];
 
 @NgModule({

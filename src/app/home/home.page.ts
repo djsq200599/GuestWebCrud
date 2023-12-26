@@ -95,7 +95,7 @@ export class HomePage implements OnInit {
       .subscribe((resultado: any) => {
         if (resultado) {
           alert('Agregado con exito');
-          // this.router.navigate(['/listar-admin']);
+          this.router.navigate(['/qr']);
         }
       });
   }
