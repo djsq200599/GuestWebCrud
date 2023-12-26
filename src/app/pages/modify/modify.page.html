@@ -1,13 +1,13 @@
-<ion-header>
+<ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title style="text-align: center; margin-right: 10%;">Invitados</ion-title>
-    <ion-back-button slot="start" icon="arrow-back" defaultHref="/login"></ion-back-button>
+    <ion-title>Modificar Invitado</ion-title>
+    <ion-back-button slot="start" icon="arrow-back" defaultHref="/admin"></ion-back-button>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <form [formGroup]="form" (ngSubmit)="Add()" class="form-container">
-
+  <div class="form-container">
+  <form novalidate [formGroup]="form" (ngSubmit)="ModifyGuest()">
     <ion-item>
       <ion-label position="floating">Nombre</ion-label>
       <ion-input formControlName="firstname"></ion-input>
@@ -116,12 +116,14 @@
 
     <div style="text-align: center;">
       <ion-row>
-        <ion-col> <ion-button type="submit" [disabled]="form.invalid && !cargaArchivo">
-            Guardar
-          </ion-button></ion-col>
-        <!-- <ion-col> <ion-button color="danger" [routerLink]="['/iniciar-sesion']">volver</ion-button>
-        </ion-col> -->
+        <ion-col>        <ion-button
+          type="submit"
+          [disabled]="form.invalid"
+        >
+          Guardar
+        </ion-button></ion-col>
       </ion-row>
     </div>
   </form>
+</div>
 </ion-content>

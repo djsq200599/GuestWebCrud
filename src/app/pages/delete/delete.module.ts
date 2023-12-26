@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { AdminListPageRoutingModule } from './admin-list-routing.module';
+import { DeletePageRoutingModule } from './delete-routing.module';
 
-import { AdminListPage } from './admin-list.page';
+import { DeletePage } from './delete.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    AdminListPageRoutingModule
+    DeletePageRoutingModule
   ],
-  declarations: [AdminListPage]
+  declarations: [DeletePage]
 })
-export class AdminListPageModule {}
+export class DeletePageModule {}

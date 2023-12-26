@@ -3,12 +3,13 @@ import { ApiService } from 'src/app/services/api.service';
 import { IonInfiniteScroll } from '@ionic/angular';
 
 @Component({
-  selector: 'app-admin-list',
-  templateUrl: './admin-list.page.html',
-  styleUrls: ['./admin-list.page.scss'],
+  selector: 'app-admin',
+  templateUrl: './admin.page.html',
+  styleUrls: ['./admin.page.scss'],
 })
-export class AdminListPage implements OnInit {
+export class AdminPage implements OnInit {
   @ViewChild(IonInfiniteScroll)
+  isModalOpen = false;
 
   public scroll!: IonInfiniteScroll;
   constructor(
@@ -26,9 +27,17 @@ export class AdminListPage implements OnInit {
 
   ionViewWillEnter(): void {
     this.apiService.Get();
+    console.log();
   }
 
   public cargarMasAutos(){
     this.apiService.MoreGet();
   }
+
+  setOpen(isOpen: boolean) {
+    this.isModalOpen = isOpen;
+  }
+
+  
+  
 }

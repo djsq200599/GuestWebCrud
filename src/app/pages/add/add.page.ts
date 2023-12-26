@@ -1,16 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ApiService } from '../services/api.service';
+import { ApiService } from 'src/app/services/api.service';
 import { Router } from '@angular/router';
-import { GuestID } from '../model/guest';
+import { GuestID } from 'src/app/model/guest';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: 'home.page.html',
-  styleUrls: ['home.page.scss'],
+  selector: 'app-add',
+  templateUrl: './add.page.html',
+  styleUrls: ['./add.page.scss'],
 })
-export class HomePage implements OnInit {
+export class AddPage  implements OnInit {
 
   public cargaArchivo = false;
   public tower = ["A", "B"]

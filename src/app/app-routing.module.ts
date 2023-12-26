@@ -20,8 +20,20 @@ const routes: Routes = [
     loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
   },
   {
-    path: 'admin-list',
-    loadChildren: () => import('./pages/admin-list/admin-list.module').then( m => m.AdminListPageModule)
+    path: 'add',
+    loadChildren: () => import('./pages/add/add.module').then( m => m.AddPageModule)
+  },
+  {
+    path: 'admin',
+    loadChildren: () => import('./pages/admin/admin.module').then( m => m.AdminPageModule)
+  },
+  {
+    path: 'delete/:idGuest',
+    loadChildren: () => import('./pages/delete/delete.module').then( m => m.DeletePageModule)
+  },
+  {
+    path: 'modify/:idGuest',
+    loadChildren: () => import('./pages/modify/modify.module').then( m => m.ModifyPageModule)
   },
 ];
 

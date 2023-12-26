@@ -9,8 +9,8 @@ import { delay } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class ApiService {
-  private URL_API_GUEST = 'http://localhost:3000/guest';
-  public URL_API_USER="http://localhost:3000/User";
+  private URL_API_GUEST = 'https://melodic-psychedelic-humidity.glitch.me/guest';
+  public URL_API_USER="https://melodic-psychedelic-humidity.glitch.me/user";
   private paginaActual = 1;
   private guestlist = new BehaviorSubject<Array<GuestID>>([]);
   public guestlist$ = this.guestlist.asObservable();
@@ -59,14 +59,10 @@ export class ApiService {
   }
 
   public DeleteforId(id: number): Observable<any> {
-    return this.http.delete(`${this.URL_API_GUEST}/${id}`);
+    return this.http.delete<GuestID | null>(`${this.URL_API_GUEST}/${id}`);
   }
 
   public ModifyforId(id: number, guest: GuestPartial): Observable<any>{
-    return this.http.patch(`${this.URL_API_GUEST}/${id}`,guest,{
-      headers: {
-        'Content-Type':'application/json; charset=utf-8'
-      }
-    });
+    return this.http.patch(`${this.URL_API_GUEST}/${id}`, guest);
   }
 }

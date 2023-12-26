@@ -1,0 +1,36 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title style="text-align: center;">Lista de invitados</ion-title>
+    <ion-back-button slot="start" icon="arrow-back" defaultHref="/login"></ion-back-button>
+    <ion-icon [routerLink]="['/add']" style="margin-right: 2%;" slot="primary" size="large" name="add" ></ion-icon>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <ion-item *ngFor="let guest of apiService.guestlist$ | async">
+      <ion-label style="text-align: center;">
+        <h2>{{ guest.firstname }} {{guest.lastname}}</h2>
+        <p>Fecha: {{guest.date}}</p>
+        <p>Rut: {{guest.rut}}</p>
+        <p>Teléfono: {{guest.phone}}</p>
+        <p>Email: {{guest.email}}</p>
+        <p>Torre: {{guest.tower}}</p>
+        <p>Número de torre: {{guest.towerNumber}}</p>
+        <p>Descripción: {{guest.description}}</p>
+        <div style="text-align: center;">
+          <ion-row>
+            <ion-col><ion-button color="warning" shape="round" [routerLink]="['/modify',guest.id]">
+              <ion-icon slot="start" name="pencil" ></ion-icon>Modificar
+              </ion-button></ion-col>
+            <ion-col> <ion-button shape="round" color="danger" [routerLink]="['/delete',guest.id]"><ion-icon slot="end" name="trash"></ion-icon>
+              Elimninar</ion-button>
+            </ion-col>
+          </ion-row>
+        </div>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
+<!-- End Add Users -->
+<!-- End Add Users -->

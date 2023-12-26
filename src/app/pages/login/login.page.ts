@@ -39,11 +39,11 @@ export class LoginPage implements OnInit {
         if (user.admin == 'admin') {
           alert("Usuario Admin reconocido");
           this.form.reset();
-          this.router.navigate(['admin-list']);
+          this.router.navigate(['admin']);
         } else if (user.admin == 'normal') {
           alert("Usuario Cliente Logeado");
           this.form.reset();
-          this.navControl.navigateRoot('admin-list');
+          this.navControl.navigateRoot('admin');
         }
       } else {
         alert("Error al iniciar sesión!");
